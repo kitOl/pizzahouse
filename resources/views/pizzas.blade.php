@@ -8,6 +8,8 @@
             Pizza List
         </div>
 
+        <p>{{ $name }} - {{ $age }}</p>
+
         @foreach ($pizzas as $pizza)
             <div>
                 {{ $loop->index + 1 }}  {{ $pizza['type'] }} - {{ $pizza['base'] }}
