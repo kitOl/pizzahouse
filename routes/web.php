@@ -18,29 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/pizzas', function () {
-    $pizzas = [
-        ['type' => 'hawaiian', 'base' => 'cheesy crust'],
-        ['type' => 'volcano', 'base' => 'garlic crust'],
-        ['type' => 'veg supreme', 'base' => 'thin & crispy']
-    ];
-
-    // $name = request('name');
-    // $age = request('age');
-
-    return view('pizzas', [
-        'pizzas' => $pizzas,
-        'name' => request('name'),
-        'age' => request('age')
-    ]);
-    // return 'pizzas';
-    // return ['name' => 'veg pizzas', 'base' => 'classic'];
-});
-
-Route::get('/pizzas/{id}', function ($id) {
-    // todo: query to db with $id
-    return view('details', ['id' => $id]);
-});
+Route::get('/pizzas', 'PizzaController@index');
+Route::get('/pizzas/{id}', 'PizzaController@show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
