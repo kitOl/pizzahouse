@@ -18,29 +18,26 @@
     <body class="antialiased">
         <div class="flex-center position-ref full-height">
 
-
-            <div class="content">
+            <div class="content text-center mt-5 ">
                 <div class="title m-b-md">
                     Pizza List
                 </div>
-                <p>{{ $type }} - {{ $base }} : {{ $price }}</p>
+                {{-- <p>{{ $type }} - {{ $base }} : {{ $price }}</p> --}}
 
-                @if ($price > 15)
-                    <p>this pizza is expensive</p>
-                @elseif ($price < 5)
-                    <p>this pizza is cheap</p>
-                @else
-                <p>this pizza is normally priced</p>
-                @endif
+                {{-- @for ($i = 0; $i < count($pizzas); $i++)
+                    <p>{{ $pizzas[$i]['type'] }}</p>
+                @endfor --}}
 
-                @unless ($base == 'cheesy crust')
-                    <p>you don't have a cheesy crust</p>
-                @endunless
-
-                @php
-                    $name = 'shaun';
-                    echo $name;
-                @endphp
+                @foreach ($pizzas as $pizza)
+                    <div>
+                      {{ $loop->index + 1 }}  {{ $pizza['type'] }} - {{ $pizza['base'] }}
+                      @if ($loop->first)
+                          <span> - first in the loop - </span>
+                        @elseif ($loop->last)
+                        <span> - last in the loop - </span>
+                      @endif
+                    </div>
+                @endforeach
 
             </div>
         </div>
