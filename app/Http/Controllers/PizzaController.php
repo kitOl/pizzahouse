@@ -21,7 +21,6 @@ class PizzaController extends Controller
 
     public function show($id)
     {
-        // todo: query to db with $id
         return view('details', ['id' => $id]);
     }
 }
