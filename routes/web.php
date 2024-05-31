@@ -37,6 +37,11 @@ Route::get('/pizzas', function () {
     // return ['name' => 'veg pizzas', 'base' => 'classic'];
 });
 
+Route::get('/pizzas/{id}', function ($id) {
+    // todo: query to db with $id
+    return view('details', ['id' => $id]);
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
