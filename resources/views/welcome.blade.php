@@ -22,9 +22,8 @@
             The North's Best Pizzas
         </div>
 
-        <div class="title links">
-            <a href="{{ '/pizzas' }}">Pizza House</a>
-        </div>
+        <a href="/pizzas/create">Order a Pizza</a>
+
 
     </div>
 </div>
